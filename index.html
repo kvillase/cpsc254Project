@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script defer src="game.js"></script>
+    <button type="button" onClick="Reset()" class="my-button">Reset</button>
     <title>Checkers</title>
 </head>
 <body>
@@ -107,15 +108,7 @@
         <div class="green-turn-text mobile">
             Green's turn
         </div>
-
-        <div class="stopwatch">
-            <span id="minutes">00</span>:<span id="seconds">00</span>
-          </div>
-          
-          <button onclick="startStopwatch()">Start</button>
-          <button onclick="stopStopwatch()">Stop</button>
-          <button onclick="resetStopwatch()">Reset</button>
-          
+        <div id="time" style="border: 10px solid blue; text-align: left;font-size: 2em; margin-top: 10px">00:00</div>
     </main>
 </body>
 </html>

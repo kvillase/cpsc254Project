@@ -98,14 +98,14 @@ function resetSelectedPieceProperties() {
     selectedPiece.minusEighteenthSpot = false;
 }
 
-// gets ID and index of the board cell its on
+// gets ID and index of the board spot its on
 function getSelectedPiece() {
     selectedPiece.pieceId = parseInt(event.target.id);
     selectedPiece.indexOfBoardPiece = findPiece(selectedPiece.pieceId);
     isPieceKing();
 }
 
-// checks if selected piece is a king
+// checks if piece is a king
 function isPieceKing() {
     if (document.getElementById(selectedPiece.pieceId).classList.contains("king")) {
         selectedPiece.isKing = true;
@@ -204,7 +204,7 @@ function checkPieceConditions() {
     }
 }
 
-// guves piece red border when moveable
+// gives piece red border when moveable
 function givePieceBorder() {
     if (selectedPiece.seventhSpot || selectedPiece.ninthSpot || selectedPiece.fourteenthSpot || selectedPiece.eighteenthSpot
     || selectedPiece.minusSeventhSpot || selectedPiece.minusNinthSpot || selectedPiece.minusFourteenthSpot || selectedPiece.minusEighteenthSpot) {
@@ -244,7 +244,7 @@ function giveCellsClick() {
 }
 
 
-// makes the move that was clicked
+// moves the piece to selected location
 function makeMove(number) {
     document.getElementById(selectedPiece.pieceId).remove();
     cells[selectedPiece.indexOfBoardPiece].innerHTML = "";
@@ -274,7 +274,7 @@ function makeMove(number) {
     }
 }
 
-// Changes the board states data on the back end
+// Changes the states data for the board
 function changeData(indexOfBoardPiece, modifiedIndex, removePiece) {
     board[indexOfBoardPiece] = null;
     board[modifiedIndex] = parseInt(selectedPiece.pieceId);
@@ -313,22 +313,40 @@ function removeEventListeners() {
     }
     checkForWin();
 }
+//stopwatch
+window.addEventListener("load", function() {
+    const clock = document.getElementById("time");
+    let time = -1, intervalId;
+    function incrementTime() {
+      time++;
+      clock.textContent =
+        ("0" + Math.trunc(time / 60)).slice(-2) +
+        ":" + ("0" + (time % 60)).slice(-2);
+    }
+    incrementTime();
+    intervalId = setInterval(incrementTime, 1000);
+  });
+  function myStopFunction() {
+    clearInterval(intervalId);
+}
 
 // Checks for a win
 function checkForWin() {
     if (blueScore === 0) {
         divider.style.display = "none";
         for (let i = 0; i < greenTurnText.length; i++) {
-            greenTurnText[i].style.color = "white";
+            greenTurnText[i].style.color = "green";
             blueTurntext[i].style.display = "none";
             greenTurnText[i].textContent = "GREEN WINS!";
+            myStopFunction();
         }
     } else if (greenScore === 0) {
         divider.style.display = "none";
         for (let i = 0; i < blueTurntext.length; i++) {            
-            blueTurntext[i].style.color = "white";
+            blueTurntext[i].style.color = "blue";
             greenTurnText[i].style.display = "none";
             blueTurntext[i].textContent = "BLUE WINS!";
+            myStopFunction();
         }
     }
     changePlayer();
@@ -351,41 +369,10 @@ function changePlayer() {
     }
     givePiecesEventListeners();
 }
- //stopwatch
-var minutesLabel = document.getElementById("minutes");
-var secondsLabel = document.getElementById("seconds");
-var totalSeconds = 0;
-var stopwatchInterval;
-
-function startStopwatch() {
-  stopwatchInterval = setInterval(setTime, 1000);
+ 
+//resets the game
+function Reset() {
+    window.parent.location = window.parent.location.href;
 }
-
-function stopStopwatch() {
-  clearInterval(stopwatchInterval);
-}
-
-function resetStopwatch() {
-  clearInterval(stopwatchInterval);
-  totalSeconds = 0;
-  minutesLabel.innerHTML = "00";
-  secondsLabel.innerHTML = "00";
-}
-
-function setTime() {
-  ++totalSeconds;
-  secondsLabel.innerHTML = pad(totalSeconds % 60);
-  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
-}
-
-function pad(val) {
-  var valString = val + "";
-  if (valString.length < 2) {
-    return "0" + valString;
-  } else {
-    return valString;
-  }
-}
-
 
 givePiecesEventListeners();

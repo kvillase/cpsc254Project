@@ -9,15 +9,7 @@ main {
     align-items: center;
     height: 100vh;
 }
-
-.stopwatch {
-    font-size: 36px;
-    font-weight: bold;
-    text-align: left;
-    margin: 20px 0;
-  }
   
-
 div {
     display: flex;
     justify-content: space-between;
@@ -77,11 +69,11 @@ td {
 }
 
 .king.green-piece {
-    background-color: orange;
+    background-color: rgb(111, 255, 142);
 }
 
 .king.blue-piece {
-    background-color: purple;
+    background-color: rgb(141, 141, 255);
 }
 
 p {
@@ -186,3 +178,25 @@ span {
         font-size: 35px;
     }
 }
+
+.my-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .my-button:hover {
+    background-color: #e18d8c;
+  }
+  
+  
+  
+  
+  
