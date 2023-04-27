@@ -1,0 +1,114 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script defer src="game.js"></script>
+    <button type="button" onClick="Reset()" class="my-button">Reset</button>
+    <title>Checkers</title>
+</head>
+<body>
+    <main>
+        <table>
+            <tr>
+                <td class="noPiece"></td>
+                <td><p class="green-piece" id="0"></p></td>
+                <td class="noPiece"></td>
+                <td><p class="green-piece" id="1"></p></td>
+                <td class="noPiece"></td>
+                <td><p class="green-piece" id="2"></p></td>
+                <td class="noPiece"></td>
+                <td><p class="green-piece" id="3"></p></td>
+            </tr>
+            <tr>
+                <td><p class="green-piece" id="4"></p></td>
+                <td class="noPiece"></td>
+                <td><p class="green-piece" id="5"></p></td>
+                <td class="noPiece"></td>
+                <td><p class="green-piece" id="6"></p></td>
+                <td class="noPiece"></td>
+                <td><p class="green-piece" id="7"></p></td>
+                <td class="noPiece"></td>
+            </tr>
+            <tr>
+                <td class="noPiece"></td>
+                <td><p class="green-piece" id="8"></p></td>
+                <td class="noPiece"></td>
+                <td><p class="green-piece" id="9"></p></td>
+                <td class="noPiece"></td>
+                <td><p class="green-piece" id="10"></p></td>
+                <td class="noPiece"></td>
+                <td><p class="green-piece" id="11"></p></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="noPiece"></td>
+                <td></td>
+                <td class="noPiece"></td>
+                <td></td>
+                <td class="noPiece"></td>
+                <td></td>
+                <td class="noPiece"></td>
+            </tr>
+            <tr>
+                <td class="noPiece"></td>
+                <td></td>
+                <td class="noPiece"></td>
+                <td></td>
+                <td class="noPiece"></td>
+                <td></td>
+                <td class="noPiece"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><span class="blue-piece" id="12"></span></td>
+                <td class="noPiece"></td>
+                <td><span class="blue-piece" id="13"></span></td>
+                <td class="noPiece"></td>
+                <td><span class="blue-piece" id="14"></span></td>
+                <td class="noPiece"></td>
+                <td><span class="blue-piece" id="15"></span></td>
+                <td class="noPiece"></td>
+            </tr>
+            <tr>
+                <td class="noPiece"></td>
+                <td><span class="blue-piece" id="16"></span></td>
+                <td class="noPiece"></td>
+                <td><span class="blue-piece" id="17"></span></td>
+                <td class="noPiece"></td>
+                <td><span class="blue-piece" id="18"></span></td>
+                <td class="noPiece"></td>
+                <td><span class="blue-piece" id="19"></span></td>
+            </tr>
+            <tr>
+                <td><span class="blue-piece" id="20"></span></td>
+                <td class="noPiece"></td>
+                <td><span class="blue-piece" id="21"></span></td>
+                <td class="noPiece">
+                <td><span class="blue-piece" id="22"></span></td>
+                <td class="noPiece"></td>
+                <td><span class="blue-piece" id="23"></span></td>
+                <td class="noPiece"></td>
+            </tr>
+        </table>
+        <div class="desktop">
+            <div class="green-turn-text">
+                Green's turn
+            </div>
+            <p id="divider">|</p>
+            <div class="blue-turn-text">
+                Blue's turn
+            </div>
+        </div>
+        <div class="blue-turn-text mobile">
+            Blue's turn
+        </div>
+        <div class="green-turn-text mobile">
+            Green's turn
+        </div>
+        <div id="time" style="border: 10px solid blue; text-align: left;font-size: 2em; margin-top: 10px">00:00</div>
+    </main>
+</body>
+</html>
