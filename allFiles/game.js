@@ -326,6 +326,7 @@ window.addEventListener("load", function() {
     incrementTime();
     intervalId = setInterval(incrementTime, 1000);
   });
+  
   function myStopFunction() {
     clearInterval(intervalId);
 }
@@ -357,14 +358,14 @@ function changePlayer() {
     if (turn) {
         turn = false;
         for (let i = 0; i < greenTurnText.length; i++) {
-            greenTurnText[i].style.color = "white";
-            blueTurntext[i].style.color = "black";
+            greenTurnText[i].style.color = "black";
+            blueTurntext[i].style.color = "white";
         }
     } else {
         turn = true;
         for (let i = 0; i < blueTurntext.length; i++) {
-            blueTurntext[i].style.color = "white";
-            greenTurnText[i].style.color = "black";
+            blueTurntext[i].style.color = "black";
+            greenTurnText[i].style.color = "white";
         }
     }
     givePiecesEventListeners();
